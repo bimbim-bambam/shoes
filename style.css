@@ -1,0 +1,175 @@
+*
+{
+    box-sizing: border-box;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body
+{
+    background-color: rgb(44, 42, 42);
+}
+
+.page
+{
+    display: grid;
+    grid-template-columns:repeat(auto-fit, 500px);
+    column-gap: 50px;
+    width: auto;
+    height: auto;
+    align-items: start;
+    justify-content: center;
+    justify-items: center;
+}
+
+.card
+{
+    display: block;
+    padding: 10px 15px 10px;
+    border-radius: 50px;
+    margin: 20px;
+    width: 500px;
+}
+
+.card_orange
+{
+    grid-column-start: 1;
+    background: linear-gradient(rgb(247, 130, 130), orange);
+}
+.card_yellow
+{
+    grid-column-start: 2;
+    background: linear-gradient(rgb(0, 200, 255), yellow);
+}
+.card_aqua
+{
+    grid-column-start: 3;
+    background: linear-gradient(aqua, rgb(49, 185, 185));
+}
+
+.card__header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fav
+{
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+
+    -webkit-mask-image: url(./images/heart-svgrepo-com.svg);
+    mask-image: url(./images/heart-svgrepo-com.svg);
+
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s;
+}
+
+.fav:checked
+{
+    -webkit-mask-image: url(./images/heart-filled-svgrepo-com.svg);
+    mask-image: url(./images/heart-filled-svgrepo-com.svg);
+}
+
+.card__img
+{
+    display: block;
+    position: relative;
+    width: 520px;
+    height: 500px;
+    padding: 0;
+    transition: 0.5s;
+}
+.card__img:hover
+{
+    transform: scale(1.2) translate(20px, 20px);
+}
+
+.card__button
+{
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid white ;
+    border-radius: 50px;
+    margin-inline: auto;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .page
+    {
+        width: auto;
+        height: auto;
+        column-gap: 20px;
+        grid-template-columns: repeat(2, 400px);
+    }
+    .card
+    {
+        width: 400px;
+    }
+    .card__img
+    {
+        width: 400px;
+        height: 400px;
+    }
+    .card_aqua
+    {
+        grid-column-start: 1;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .page
+    {
+        width: auto;
+        height: auto;
+        grid-template-columns: repeat(1, 500px);
+    }
+    .card_yellow
+    {
+        grid-column-start: 1;
+        margin-top: 50px;
+    }
+    .card_aqua
+    {
+        grid-column-start: 1;
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .page
+    {
+        width: auto;
+        height: auto;
+        grid-template-columns: repeat(1, 400px);
+    }
+    .card
+    {
+        width: 350px;
+    }
+    .card__img
+    {
+        width: 300px;
+        height: 300px;
+    }
+    .card_yellow
+    {
+        grid-column-start: 1;
+        margin-top: 50px;
+    }
+    .card_aqua
+    {
+        grid-column-start: 1;
+        padding-top: 50px;
+    }
+}
